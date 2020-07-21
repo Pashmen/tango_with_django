@@ -5,6 +5,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE',
 import django
 django.setup()
 from rango.models import Category, Page
+from django.template.defaultfilters import slugify
+
 
 def populate():
     python_pages = [
@@ -35,7 +37,7 @@ def populate():
 
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data['views'], cat_data['likes'])
-        for p in cat_data["pages"]:
+        for p in cat_data["pages"]:            
             add_page(c, p["title"], p["url"])
     
     for c in Category.objects.all():
