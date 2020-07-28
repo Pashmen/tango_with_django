@@ -1,8 +1,7 @@
-from rango.forms import CategoryForm, PageForm
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
+from rango.forms import CategoryForm, PageForm
 from rango.models import Category, Page
 
 
